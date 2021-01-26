@@ -1,3 +1,4 @@
+import { logger } from "../../server/utils/Logger.js";
 import { ProxyState } from "../AppState.js";
 import { AuthService } from "../Services/AuthService.js";
 
