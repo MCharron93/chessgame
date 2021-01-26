@@ -22,8 +22,7 @@ function _checkGame(){
   
   if(chess.in_check()){
     if(chess.in_checkmate()){
-      _drawCheckmate(activeTurn)
-      return chess.game_over()
+      return _drawCheckmate(activeTurn)
     }
     return _drawCheck(activeTurn)}
     if(chess.in_stalemate()){
@@ -52,12 +51,15 @@ function _drawCheckmate(chessInfo){
   if(chessInfo == 'w'){
     movesElement.innerHTML = `<div>
     Checkmate, the Computer wins
-    </div>`
+    </div>
+    `
+    // NOTE draw sweet alert for winning?
   }
   else{
     movesElement.innerHTML = `<div>
     Checkmate, you win
-    </div>`
+    </div>
+    `
   }
   
   // NOTE this function should then call to the profileService and update the schema on the BE for the profile stats, 
@@ -69,7 +71,8 @@ function _drawStalemate(){
   
   movesElement.innerHTML = `<div>
   The game is a tie due to neither team's victory
-  </div>`
+  </div>
+  `
   
   // NOTE this function should then call to the profileService and update the schema on the BE for the profile stats, 
   // profileService.updateStats()
@@ -108,6 +111,7 @@ export default class ChessController {
     })
   }
 }
+
 
   // NOTE there should be event handlers for drag and drop as well as listeners to start the game, checking to see who's turn it is
   function dragStart (source, piece, position, orientation) {
