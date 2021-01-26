@@ -49,6 +49,8 @@ function _drawCheck(chessInfo){
 function _drawCheckmate(chessInfo){
   console.log('draw checkmate')
   if(chessInfo == 'w'){
+    // NOTE refactor this to increment on the BE for better source control
+    const winner = {"gameLoss": 1}
     movesElement.innerHTML = `<div>
     Checkmate, the Computer wins
     </div>
@@ -56,19 +58,21 @@ function _drawCheckmate(chessInfo){
     // NOTE draw sweet alert for winning?
   }
   else{
+    // NOTE refactor this to increment on the BE for better source control
+    const winner = {"gameWin": 1}
     movesElement.innerHTML = `<div>
     Checkmate, you win
     </div>
     `
   }
   
-  // NOTE this function should then call to the profileService and update the schema on the BE for the profile stats, 
-  // profileService.updateStats()
+  // NOTE this function should then call to the profileService and update the schema on the BE for the profile stats, pass win/loss object to the service to Put on the profile schema
+  // profileService.updateStats(winner)
 }
 
 function _drawStalemate(){
-  console.log()
-  
+    // NOTE refactor this to increment on the BE for better source control
+  const results = {"tie": 1}
   movesElement.innerHTML = `<div>
   The game is a tie due to neither team's victory
   </div>
