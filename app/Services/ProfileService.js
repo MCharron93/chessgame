@@ -6,6 +6,7 @@ class ProfileService {
     try {
       const res = await api.get('account')
       ProxyState.profile = res.data
+      console.log(ProxyState.profile)
     } catch (err) {
       console.error(err)
     }

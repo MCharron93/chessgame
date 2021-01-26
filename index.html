@@ -33,14 +33,26 @@
         </nav>
     </header>
     <main class="container-fluid">
-        <div class="row my-3">
-            <div class="col">
+        <div class="row justify-content-around p-3  ">
+            <div class="col-5 p-2">
                 <div id="board"></div>
             </div>
-            <div class="col-7">
-                <div id="moves"></div>
-                <button class="btn btn-success" onclick="app.chessController.startGame()"><i
-                        class="fas fa-sync"></i></button>
+            <div class="col-5  m-2">
+                <!-- <button class="btn btn-success" onclick="app.chessController.startGame()">Start Game<i
+                class="fas fa-sync"></i></button> -->
+                <div class="row  m-2 align-items-center justify-content-around">
+
+                    <h4 id="moves" class="col-12 p-4 m-2">Available moves:</h4>
+                    <div class="col-12 p-4 m-2">
+                        <button class="btn btn-info" onclick="app.chessController.startGame()">Reset Board
+                            &nbsp;&nbsp;<i class="fas fa-sync"></i></button>
+                    </div>
+                    <div class="col-12 p-4 m-2">
+                        <h4>Player Stats:</h4>
+                        <hr>
+                        <h6 id="stats"></h6>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
