@@ -1,0 +1,22 @@
+{
+  "name": "cw-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "bcw-serve",
+    "sass": "sass --watch assets/scss:assets/style"
+  },
+  "author": "Jake Overall <joverall22@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chess.js": "^0.10.1",
+    "@types/chessboardjs": "^0.3.1",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "@chrisoakman/chessboardjs": "^1.0.0",
+    "bootstrap": "^4.5.2",
+    "chess.js": "^0.11.0"
+  }
+}
