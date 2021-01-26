@@ -7,8 +7,11 @@ const Account = new Schema(
     _id: { type: String, required: true },
     email: { type: String, lowercase: true, unique: true },
     name: { type: String, required: true },
-    picture: { type: String }
+    picture: { type: String },
     // NOTE If you wish to add additional public properties for Accounts do so here
+    wins: { type: Number, default: 0 },
+    losses: { type: Number, default: 0 },
+    ties: { type: Number, default: 0 }
   },
   { timestamps: true, _id: false, toJSON: { virtuals: true } }
 )

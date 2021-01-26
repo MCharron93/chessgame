@@ -4,12 +4,12 @@ import express from 'express'
 import helmet from 'helmet'
 import { RegisterControllers, Paths, RegisterSocketHandlers } from '../Setup'
 import { Auth0Provider } from '@bcwdev/auth0provider'
-import { logger } from './server/utils/Logger'
+import { logger } from './utils/Logger'
 
 export default class Startup {
   static ConfigureGlobalMiddleware(app) {
     // NOTE Configure and Register Middleware
-    const whitelist = ['http://localhost:8080', 'http://localhost:8081']
+    const whitelist = ['http://localhost:8080']
     const corsOptions = {
       origin: function(origin, callback) {
         const originIsWhitelisted = whitelist.indexOf(origin) !== -1

@@ -1,8 +1,8 @@
 import express from 'express'
-import Socket from './server/services/SocketService'
+import Socket from './services/SocketService'
 import Startup from './Startup'
-import DbContext from './server/db/DbConfig'
-import { logger } from './server/utils/Logger'
+import DbContext from './db/DbConfig'
+import { logger } from './utils/Logger'
 
 // create server & socketServer
 const app = express()
