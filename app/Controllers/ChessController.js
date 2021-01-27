@@ -1,5 +1,6 @@
 import { ProxyState } from '../AppState.js'
 import { profileService } from '../Services/ProfileService.js'
+// import $ from '../node_modules/jquery/dist/jquery'
 
 const movesElement = document.getElementById('moves')
 const statsElement = document.getElementById('stats')
@@ -140,7 +141,7 @@ function dragStart(source, piece, position, orientation) {
 
   // NOTE only move pieces for the side to move, depending on who's turn it currently is
   if ((ProxyState.newChess.turn() === 'w' && piece.search(/^b/) !== -1) ||
-        (ProxyState.newChess.turn() === 'b' && piece.search(/^w/) !== -1)) {
+  (ProxyState.newChess.turn() === 'b' && piece.search(/^w/) !== -1)) {
     return false
   }
 }

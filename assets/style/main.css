@@ -64,6 +64,15 @@ body {
   background-color: #f2f2f2;
 }
 
+/* NOTE custom button styling */
+.bttn{
+  color: var(--success);
+}
+.bttn:hover{
+  color: var(--info);
+}
+
+
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
@@ -4788,7 +4797,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   top: 0;
   right: 0;
   padding: 0.75rem 1.25rem;
-  color: inherit;
+  color: var(--danger);
 }
 
 .alert-primary {
@@ -5249,12 +5258,12 @@ a.badge-dark:focus, a.badge-dark.focus {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1;
-  color: #000;
+  color: var(--danger);
   text-shadow: 0 1px 0 white;
   opacity: 0.5;
 }
 .close:hover {
-  color: #000;
+  color: var(--danger);
   text-decoration: none;
 }
 .close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
@@ -5265,6 +5274,7 @@ button.close {
   padding: 0;
   background-color: transparent;
   border: 0;
+  color: var(--danger);
 }
 
 a.close.disabled {
