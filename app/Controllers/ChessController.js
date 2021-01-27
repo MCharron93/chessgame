@@ -87,6 +87,8 @@ function _drawStats() {
   const wins = ProxyState.profile.wins
   const losses = ProxyState.profile.losses
   const ties = ProxyState.profile.ties
+  const gamesRatio = wins / losses
+  const totalGamesPlayed = wins + losses + ties
 
   statsElement.innerHTML = `<div>
   Wins: ${wins}
@@ -94,6 +96,10 @@ function _drawStats() {
   Losses: ${losses}
   <br>
   Ties: ${ties}
+  <br>
+  Win/Loss Ration: ${gamesRatio}
+  <br>
+  Total Games Played:${totalGamesPlayed}
   </div>`
 }
 
