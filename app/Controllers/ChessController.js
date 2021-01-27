@@ -53,7 +53,6 @@ function _drawCheckmate(chessInfo) {
     // NOTE refactor this to increment on the BE for better source control
     const lostGame = ProxyState.profile.losses++
     const results = { losses: lostGame }
-    // console.log(lostGame)
 
     // NOTE draw sweet alert for winning?
     movesElement.innerHTML = `<div>
@@ -64,7 +63,6 @@ function _drawCheckmate(chessInfo) {
   } else {
     // NOTE refactor this to increment on the BE for better source control
     const wonGame = ProxyState.profile.wins++
-    console.log(wonGame)
     const results = { wins: wonGame }
     movesElement.innerHTML = `<div>
     Checkmate, you win
@@ -136,7 +134,7 @@ export default class ChessController {
     // eslint-disable-next-line no-undef
     const newGame = new Chess()
     ProxyState.newChess = newGame
-    profileService.getProfile()
+    // profileService.getProfile()
 
     // eslint-disable-next-line no-undef
     ProxyState.chessboard = Chessboard('board', {
