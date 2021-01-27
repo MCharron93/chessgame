@@ -25,7 +25,8 @@ function _checkGame() {
 
   if (chess.in_check()) {
     if (chess.in_checkmate()) {
-      return _drawCheckmate(activeTurn)
+      _drawCheckmate(activeTurn)
+      return chess.game_over()
     }
     return _drawCheck(activeTurn)
   }
@@ -50,17 +51,21 @@ function _drawCheck(chessInfo) {
 function _drawCheckmate(chessInfo) {
   if (chessInfo === 'w') {
     // NOTE refactor this to increment on the BE for better source control
-    const results = { losses: 1 }
+    const lostGame = ProxyState.profile.losses++
+    const results = { losses: lostGame }
+    // console.log(lostGame)
+
     // NOTE draw sweet alert for winning?
     movesElement.innerHTML = `<div>
     Checkmate, the Computer wins
     </div>
     `
-
     return profileService.updateStats(results)
   } else {
     // NOTE refactor this to increment on the BE for better source control
-    const results = { wins: 1 }
+    const wonGame = ProxyState.profile.wins++
+    console.log(wonGame)
+    const results = { wins: wonGame }
     movesElement.innerHTML = `<div>
     Checkmate, you win
     </div>
@@ -73,7 +78,8 @@ function _drawCheckmate(chessInfo) {
 
 function _drawStalemate() {
   // NOTE refactor this to increment on the BE for better source control
-  const results = { ties: 1 }
+  const tiedGame = ProxyState.profile.ties++
+  const results = { ties: tiedGame }
   movesElement.innerHTML = `<div>
   The game is a tie due to neither team's victory
   </div>
@@ -87,19 +93,22 @@ function _drawStats() {
   const wins = ProxyState.profile.wins
   const losses = ProxyState.profile.losses
   const ties = ProxyState.profile.ties
-  const gamesRatio = wins / losses
   const totalGamesPlayed = wins + losses + ties
 
+  // NOTE look to integrate ratio for wins/losses
+  // let gamesRatio = wins / losses
+  // if (!gamesRatio) {
+  //   gamesRatio = 0
+  // }
+
   statsElement.innerHTML = `<div>
-  Wins: ${wins}
+  Wins:  ${wins}
   <br>
-  Losses: ${losses}
+  Losses:  ${losses}
   <br>
-  Ties: ${ties}
+  Ties:  ${ties}
   <br>
-  Win/Loss Ration: ${gamesRatio}
-  <br>
-  Total Games Played:${totalGamesPlayed}
+  Total Games Played:  ${totalGamesPlayed}
   </div>`
 }
 
