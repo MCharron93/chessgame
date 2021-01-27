@@ -15,7 +15,6 @@ class ProfileService {
   // NOTE will need to insert a function here that calls to the db, update stats for the end of the game on the profile in the BE and returns the new stats
   async updateStats(results) {
     try {
-      debugger
       const profileId = ProxyState.profile._id
       const res = api.put('account/' + profileId, results)
       console.log(res.data)

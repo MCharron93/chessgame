@@ -88,5 +88,9 @@ class AccountService {
     )
     return account
   }
+
+  async updateStats(id, body) {
+    return await dbContext.Account.findByIdAndUpdate(id, body, { new: true })
+  }
 }
 export const accountService = new AccountService()

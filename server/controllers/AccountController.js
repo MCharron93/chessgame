@@ -23,7 +23,7 @@ export class AccountController extends BaseController {
   // NOTE this will update the game stats for whether the player wins/loses the game
   async updateUserAccount(req, res, next) {
     try {
-      // const updateInfo = await accountService.updateStats(req.userInfo, editData)
+      res.send(await accountService.updateStats(req.params.id, req.body))
     } catch (error) {
       next(error)
     }
