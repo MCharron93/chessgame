@@ -1,6 +1,5 @@
 import { ProxyState } from '../AppState.js'
 import { profileService } from '../Services/ProfileService.js'
-// import $ from 'jquery'
 
 const movesElement = document.getElementById('moves')
 const statsElement = document.getElementById('stats')
