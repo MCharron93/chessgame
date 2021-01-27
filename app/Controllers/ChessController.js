@@ -136,6 +136,7 @@ export default class ChessController {
     // eslint-disable-next-line no-undef
     const newGame = new Chess()
     ProxyState.newChess = newGame
+    profileService.getProfile()
 
     // eslint-disable-next-line no-undef
     ProxyState.chessboard = Chessboard('board', {
