@@ -16,6 +16,7 @@ class ProfileService {
   async updateStats(results) {
     try {
       const profileId = ProxyState.profile._id
+      console.log(results)
       const res = api.put('account/' + profileId, results)
       console.log(res.data)
     } catch (error) {

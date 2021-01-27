@@ -8,7 +8,7 @@ export class AccountController extends BaseController {
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       .get('', this.getUserAccount)
-      .put(':profileId', this.updateUserAccount)
+      .put('/:profileId', this.updateUserAccount)
   }
 
   async getUserAccount(req, res, next) {
@@ -23,7 +23,7 @@ export class AccountController extends BaseController {
   // NOTE this will update the game stats for whether the player wins/loses the game
   async updateUserAccount(req, res, next) {
     try {
-      res.send(await accountService.updateStats(req.params.id, req.body))
+      res.send(await accountService.updateStats(req.params.profileId, req.body))
     } catch (error) {
       next(error)
     }

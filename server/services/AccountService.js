@@ -1,4 +1,5 @@
 import { dbContext } from '../db/DbContext'
+import { logger } from '../utils/Logger'
 
 // Private Methods
 

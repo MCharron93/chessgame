@@ -55,6 +55,7 @@ function _drawCheckmate(chessInfo) {
     Checkmate, the Computer wins
     </div>
     `
+
     return profileService.updateStats(results)
     // NOTE draw sweet alert for winning?
   } else {
